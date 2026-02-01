@@ -12,7 +12,6 @@ A simple and clean Full-Stack E-commerce website.
 - **Frontend & Backend**: Next.js (React)
 - **Database**: MongoDB (Mongoose)
 - **Payments**: Stripe API
-- **Auth**: JWT & Bcrypt (Security)
 - **Styling**: Vanilla CSS
 
 ## 🛠️ How to Run
