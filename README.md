@@ -1,200 +1,56 @@
-# E-Commerce Application
+# ✨ Premium Store - Full Stack E-commerce
 
-A full-stack e-commerce application built with Node.js, Express, MongoDB, Next.js, and Stripe for payments.
+A modern, fast, and premium e-commerce platform built with **Next.js**, **MongoDB**, and **Stripe**. This project features a consolidated architecture where the frontend and backend live together for maximum stability.
 
-## Features
+## 🚀 Features
 
-### Backend
-- ✅ User authentication with JWT
-- ✅ Password hashing with bcrypt
-- ✅ Product management (CRUD operations)
-- ✅ Order management with Stripe integration
-- ✅ Secure payment processing via Stripe webhooks
-- ✅ Role-based access control (Admin/User)
-- ✅ Comprehensive error handling
-- ✅ MongoDB with Mongoose ODM
+- **🛒 Modern Storefront**: High-performance shopping experience with smooth animations.
+- **🛡️ Admin Dashboard**: Manage your business with ease:
+  - **📊 Stats**: Track users, products, and stock levels.
+  - **📦 Product Management**: Create, edit, and delete products easily.
+  - **👥 User Database**: View all registered customers.
+- **🔑 Smart Auth**: Automatic redirection for admins. Regular users go to the shop; admins go to the dashboard.
+- **💳 Secure Payments**: Integrated with Stripe for safe transactions.
+- **📱 Responsive Design**: Looks great on phones, tablets, and desktops.
 
-### Frontend
-- ✅ Modern, responsive UI with Next.js
-- ✅ Product browsing and search
-- ✅ Shopping cart functionality
-- ✅ Secure checkout with Stripe
-- ✅ Order history tracking
-- ✅ User authentication
+## 🛠️ Tech Stack
 
-## Tech Stack
+- **Frontend & Backend**: Next.js (React)
+- **Database**: MongoDB (Mongoose)
+- **Styling**: Vanilla CSS (Premium Glassmorphism Design)
+- **Auth**: JWT (JSON Web Tokens) & Bcrypt
+- **Payments**: Stripe API
 
-**Backend:**
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT for authentication
-- Bcrypt for password hashing
-- Stripe for payments
+## 🏁 Quick Start
 
-**Frontend:**
-- Next.js
-- React
-- Axios
-- Styled JSX
-
-## Project Structure
-
-```
-ecommerce/
-├── server/
-│   ├── config/
-│   │   └── db.js              # Database connection
-│   ├── middleware/
-│   │   └── auth.js            # Authentication middleware
-│   ├── models/
-│   │   ├── User.js            # User schema
-│   │   ├── product.js         # Product schema
-│   │   └── order.js           # Order schema
-│   ├── routes/
-│   │   ├── userRoutes.js      # User routes (register, login)
-│   │   ├── productRoutes.js   # Product CRUD routes
-│   │   └── orderRoutes.js     # Order and payment routes
-│   ├── .env                   # Environment variables
-│   ├── server.js              # Server entry point
-│   └── package.json
-│
-└── client/
-    ├── pages/
-    │   └── index.js           # Home page
-    ├── utils/
-    │   └── api.js             # Axios instance
-    └── package.json
-```
-
-## Setup Instructions
-
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (local or Atlas)
-- Stripe account
-
-### Backend Setup
-
-1. Navigate to the server directory:
-```bash
-cd server
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Configure environment variables in `.env`:
-```env
-MONGO_URI=mongodb://127.0.0.1:27017/ecommerce
-JWT_SECRET=your-super-secret-jwt-key
-STRIPE_KEY=your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
-PORT=5000
-NODE_ENV=development
-CLIENT_URL=http://localhost:3000
-```
-
-4. Start MongoDB (if running locally):
-```bash
-mongod
-```
-
-5. Start the server:
-```bash
-npm run dev
-```
-
-The server will run on `http://localhost:5000`
-
-### Frontend Setup
-
-1. Navigate to the client directory:
+### 1. Installation
+Clone the repository and install dependencies:
 ```bash
 cd client
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Create `.env.local` file:
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000/api
+### 2. Environment Setup
+Create a `.env.local` file in the `client` folder:
+```text
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+STRIPE_KEY=your_stripe_key
 ```
 
-4. Start the development server:
+### 3. Run the App
+Start the development server:
 ```bash
 npm run dev
 ```
+Open **http://localhost:3000** in your browser.
 
-The client will run on `http://localhost:3000`
+## 📁 Project Structure
 
-## API Endpoints
+- `/pages/api`: Backend logic and database routes.
+- `/pages`: Frontend screens (Store, Login, Admin).
+- `/models`: Database blueprints for Users, Products, and Orders.
+- `/utils`: Helper functions and database connection.
 
-### Authentication
-- `POST /api/users/register` - Register new user
-- `POST /api/users/login` - Login user
-
-### Products
-- `GET /api/products` - Get all products
-- `GET /api/products/:id` - Get single product
-- `POST /api/products` - Create product (Admin only)
-- `PUT /api/products/:id` - Update product (Admin only)
-- `DELETE /api/products/:id` - Delete product (Admin only)
-
-### Orders
-- `POST /api/orders/checkout` - Create checkout session (Authenticated)
-- `POST /api/orders/webhook` - Stripe webhook endpoint
-- `GET /api/orders/my-orders` - Get user's orders (Authenticated)
-- `GET /api/orders/:id` - Get single order (Authenticated)
-- `GET /api/orders` - Get all orders (Admin only)
-- `PATCH /api/orders/:id/status` - Update order status (Admin only)
-
-## Stripe Webhook Setup
-
-1. Install Stripe CLI:
-```bash
-stripe login
-```
-
-2. Forward webhooks to local server:
-```bash
-stripe listen --forward-to localhost:5000/api/orders/webhook
-```
-
-3. Copy the webhook signing secret to your `.env` file as `STRIPE_WEBHOOK_SECRET`
-
-## Security Features
-
-- Password hashing with bcrypt (10 rounds)
-- JWT token authentication with expiration
-- Protected routes with authentication middleware
-- Role-based access control
-- Input validation on all routes
-- CORS configuration
-- Secure payment processing via Stripe
-
-## Future Enhancements
-
-- [ ] Product categories and filtering
-- [ ] Product reviews and ratings
-- [ ] Wishlist functionality
-- [ ] Email notifications
-- [ ] Admin dashboard
-- [ ] Product inventory management
-- [ ] Multiple payment methods
-- [ ] Shipping tracking
-- [ ] Discount codes and promotions
-
-## License
-
-ISC
-
-## Author
-
-Your Name
+---
+Built with ❤️ by [Premium Store Team]
