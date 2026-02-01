@@ -8,6 +8,13 @@ A simple and clean Full-Stack E-commerce website.
 - **Admin Dashboard**: Manage products and view users (Admins only).
 - **Secure Payments**: Integrated with Stripe.
 
+## 💻 Technologies Used
+- **Frontend & Backend**: Next.js (React)
+- **Database**: MongoDB (Mongoose)
+- **Payments**: Stripe API
+- **Auth**: JWT & Bcrypt (Security)
+- **Styling**: Vanilla CSS
+
 ## 🛠️ How to Run
 1. Go into the `client` folder.
 2. Run `npm install` to get the tools.
