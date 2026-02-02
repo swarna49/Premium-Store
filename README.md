@@ -19,6 +19,8 @@ A simple and clean Full-Stack E-commerce website.
 2. Run `npm install` to get the tools.
 3. Run `npm run dev` to start the site.
 4. Open **http://localhost:3000** in your browser.
+5. demo vedio
+https://github.com/swarna49/Premium-Store/issues/1#issue-3886020640
 
 ## 📁 Key Folders
 - `/pages`: Frontend pages.
